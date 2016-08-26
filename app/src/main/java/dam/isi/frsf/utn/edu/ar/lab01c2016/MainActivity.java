@@ -29,34 +29,36 @@ public class MainActivity extends AppCompatActivity {
                 EditText cuit = (EditText) findViewById(R.id.editTextCuit);
                 EditText importe = (EditText) findViewById(R.id.editTextImporte);
                 SeekBar dias = (SeekBar) findViewById(R.id.seekBar);
-                CheckBox checkRenovarVencimiento = (CheckBox) findViewById(R.id.checkBoxRenovarVencimiento);
+                CheckBox checkRenovarVencimiento = (CheckBox)
+                        findViewById(R.id.checkBoxRenovarVencimiento);
                 Boolean valid = true;
                 if (!Patterns.EMAIL_ADDRESS.matcher(email.getText()).matches()){
                     valid = false;
                 }
-                // TODO: checkear
+                //TODO: checkear
 
-                if( cuit.getText().toString().matches("[0-9]{11})")){
-                    valid = false;
-                }
-                // TODO checkear
-                if(importe.getText().toString().matches("[-]?[0-9]*\\.?[0-9]*)")){
-                    valid = false;
-                }
-                double tasa = 0;
-                double numDias = 0;
-                double interes = Integer.parseInt(importe.getText().toString()) * (Math.pow(1+(tasa/100),(numDias/360))-1);
+//                if( cuit.getText().toString().matches("[0-9]{11})")){
+//                    valid = false;
+//                }
+//                // TODO checkear
+//                if(importe.getText().toString().matches("[-]?[0-9]*\\.?[0-9]*)")){
+//                    valid = false;
+//                }
+                double tasa = 0.0;
+                double numDias = 0.0;
+//                double interes = Double.parseDouble(importe.getText().toString()) *
+//                        (Math.pow(1+(tasa/100),(numDias/360))-1);
 
                 TextView resultado = (TextView) findViewById(R.id.textViewResultado);
 
                 if (valid){
                     resultado.setTextColor(R.color.VERDE);
-                    String strAux = "Plazo fijo realizado. Recibirá "+ interes + " al vencimiento!";
+                    String strAux = "Plazo fijo realizado. Recibirá " + " al vencimiento!";
                     resultado.setText(strAux);
                 }
                 else {
-                    resultado.setTextColor(R.color.ROJO);
                     resultado.setText(R.string.mensajeResultadoError);
+                    resultado.setTextColor(getResources().getColor(R.color.ROJO));
                 }
 
             }
