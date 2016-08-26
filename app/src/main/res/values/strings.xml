@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Lab01c2016</string>
+    <string name="email"></string>
+    <string name="cuit"></string>
+    <string name="inversion"></string>
+    <string name="diasSeleccionados"></string>
+    <string name="diasInversion"></string>
+    <string name="rendimiento"></string>
+    <string name="btnPlazo">HACER PLAZO FIJO</string>
+    <string name="checkboxVencimiento">Renovar Automáticamente Vencimiento</string>
+    <string name="mensajeResultadoError">Datos Incorrectos, por favor reviselos</string>
+
+</resources>

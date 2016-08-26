@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tasa0_5000_menos30" format="float" type="dimen">25.0</item>
+    <item name="tasa0_5000_30oMas" format="float" type="dimen">27.5</item>
+    <item name="tasa5000_9000_menos30" format="float" type="dimen">30.0</item>
+    <item name="tasa5000_9000_30oMas" format="float" type="dimen">32.3</item>
+    <item name="tasaMas9000_menos30" format="float" type="dimen">35</item>
+    <item name="tasaMas9000_30oMas" format="float" type="dimen">38.5</item>
+</resources>
