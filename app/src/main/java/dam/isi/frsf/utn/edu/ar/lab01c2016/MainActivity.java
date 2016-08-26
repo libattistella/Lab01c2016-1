@@ -37,23 +37,25 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //TODO: checkear
 
-//                if( cuit.getText().toString().matches("[0-9]{11})")){
-//                    valid = false;
-//                }
-//                // TODO checkear
-//                if(importe.getText().toString().matches("[-]?[0-9]*\\.?[0-9]*)")){
-//                    valid = false;
-//                }
+                if( cuit.getText().toString().matches("[0-9]{11}")){
+                    valid = false;
+                }
+                // TODO checkear
+                if(importe.getText().toString().matches("[-]?[0-9]*\\.?[0-9]*")){
+                    valid = false;
+                }
                 double tasa = 0.0;
                 double numDias = 0.0;
-//                double interes = Double.parseDouble(importe.getText().toString()) *
-//                        (Math.pow(1+(tasa/100),(numDias/360))-1);
-
+                double interes = 0.0;
+                if(!importe.getText().toString().isEmpty()){
+                    interes = Double.parseDouble(importe.getText().toString()) *
+                            (Math.pow(1+(tasa/100),(numDias/360))-1);
+                }
                 TextView resultado = (TextView) findViewById(R.id.textViewResultado);
 
                 if (valid){
-                    resultado.setTextColor(R.color.VERDE);
-                    String strAux = "Plazo fijo realizado. Recibirá " + " al vencimiento!";
+                    String strAux = "Plazo fijo realizado. Recibirá " + interes + " al vencimiento!";
+                    resultado.setTextColor(getResources().getColor(R.color.VERDE));
                     resultado.setText(strAux);
                 }
                 else {
