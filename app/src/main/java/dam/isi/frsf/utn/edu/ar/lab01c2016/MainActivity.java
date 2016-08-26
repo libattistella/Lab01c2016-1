@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 TextView resultado = (TextView) findViewById(R.id.textViewResultado);
 
                 if (valid){
-                    resultado.setTextColor(getResources().getColor(R.color.VERDE));
+                    resultado.setTextColor(R.color.VERDE);
                     String strAux = "Plazo fijo realizado. Recibirá "+ interes + " al vencimiento!";
                     resultado.setText(strAux);
                 }
                 else {
-                    resultado.setTextColor(getResources().getColor(R.color.ROJO));
+                    resultado.setTextColor(R.color.ROJO);
                     resultado.setText(R.string.mensajeResultadoError);
                 }
 
