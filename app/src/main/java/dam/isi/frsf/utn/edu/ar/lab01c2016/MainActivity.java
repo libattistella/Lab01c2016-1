@@ -61,29 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
                 double dImporte = Double.parseDouble(strImporte);
                 double numDias = dias.getProgress();
-                double tasa;
-                if(dImporte <= 5000){
-                    if(numDias < 30) {
-                        tasa = Double.parseDouble(getResources().getString(R.string.tasa0_5000_menos30));
-                    } else {
-                        tasa = Double.parseDouble(getResources().getString(R.string.tasa0_5000_30oMas));
-                    }
-                } else if(dImporte <= 99999) {
-                    if(numDias < 30) {
-                        tasa = Double.parseDouble(getResources().getString(R.string.tasa5000_99999_menos30));
-                    } else {
-                        tasa = Double.parseDouble(getResources().getString(R.string.tasa5000_99999_30oMas));
-                    }
-                } else {
-                    if(numDias < 30) {
-                        tasa = Double.parseDouble(getResources().getString(R.string.tasaMas99999_menos30));
-                    } else {
-                        tasa = Double.parseDouble(getResources().getString(R.string.tasaMas99999_30oMas));
-                    }
-                }
-
-
-                double dInteres = dImporte * (Math.pow(1 + (tasa / 100), (numDias / 360)) - 1);
+                double tasa = buscarTasa(dImporte, numDias);
+                double dInteres = calcularInteres(tasa, numDias, dImporte);
 
                 String strAux = String.format("$%.1f",dInteres);
                 tvMonto.setText(strAux);
@@ -91,6 +70,34 @@ public class MainActivity extends AppCompatActivity {
                 resultado.setTextColor(getResources().getColor(R.color.VERDE));
                 resultado.setText(strAux);
 
+            }
+
+            private double buscarTasa(double importe, double dias){
+                double tasa;
+                if(importe <= 5000){
+                    if(dias < 30) {
+                        tasa = Double.parseDouble(getResources().getString(R.string.tasa0_5000_menos30));
+                    } else {
+                        tasa = Double.parseDouble(getResources().getString(R.string.tasa0_5000_30oMas));
+                    }
+                } else if(importe <= 99999) {
+                    if(dias < 30) {
+                        tasa = Double.parseDouble(getResources().getString(R.string.tasa5000_99999_menos30));
+                    } else {
+                        tasa = Double.parseDouble(getResources().getString(R.string.tasa5000_99999_30oMas));
+                    }
+                } else {
+                    if(dias < 30) {
+                        tasa = Double.parseDouble(getResources().getString(R.string.tasaMas99999_menos30));
+                    } else {
+                        tasa = Double.parseDouble(getResources().getString(R.string.tasaMas99999_30oMas));
+                    }
+                }
+                return tasa;
+            }
+
+            private double calcularInteres(double tasa, double dias, double importe){
+                return (importe * (Math.pow(1 + (tasa / 100), (dias / 360)) - 1));
             }
         });
 
@@ -108,5 +115,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
+
+
     }
 }
