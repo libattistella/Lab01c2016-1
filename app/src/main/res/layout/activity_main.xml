@@ -19,13 +19,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calculadora Plazo Fijo"
+            android:text="@string/titulo"
             android:id="@+id/textViewSubtitulo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Correo Electrónico"
+            android:text="@string/email"
             android:id="@+id/textViewEmail" />
 
         <EditText
@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CUIT"
+            android:text="@string/cuit"
             android:id="@+id/textViewCuit" />
 
         <EditText
@@ -51,26 +51,33 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Importe"
+            android:text="@string/inversion"
             android:id="@+id/textViewImporte" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:ems="10"
-            android:id="@+id/editTextImporte" />
+            android:id="@+id/editTextImporte"
+            android:inputType="numberDecimal" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cantidad de Dias"
-            android:id="@+id/textViewCantidadDias" />
+            android:text="@string/diasSeleccionados"
+            android:id="@+id/textViewCantidadDiasStr" />
 
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/seekBar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diasInversion"
+            android:id="@+id/textViewCantidadDiasNum"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,12 +90,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Monto"
+            android:text="@string/rendimiento"
             android:id="@+id/textViewMontoStr" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="$"
             android:id="@+id/textViewMontoNum" />
 
@@ -107,7 +115,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text=""
             android:id="@+id/textViewResultado"
             android:layout_gravity="center_horizontal" />

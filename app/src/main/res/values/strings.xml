@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Lab01c2016</string>
-    <string name="email"></string>
-    <string name="cuit"></string>
-    <string name="inversion"></string>
-    <string name="diasSeleccionados"></string>
-    <string name="diasInversion"></string>
-    <string name="rendimiento"></string>
+    <string name="titulo">Calculadora Plazo Fijo</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="cuit">CUIT</string>
+    <string name="inversion">Importe</string>
+    <string name="diasSeleccionados">Cantidad de Dias</string>
+    <string name="diasInversion">0</string>
+    <string name="rendimiento">Monto</string>
     <string name="btnPlazo">HACER PLAZO FIJO</string>
     <string name="checkboxVencimiento">Renovar Automáticamente Vencimiento</string>
     <string name="mensajeResultadoError">Datos Incorrectos, por favor revíselos</string>
