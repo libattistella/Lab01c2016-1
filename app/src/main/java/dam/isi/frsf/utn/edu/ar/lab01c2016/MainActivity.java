@@ -38,16 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!Patterns.EMAIL_ADDRESS.matcher(etEmail.getText()).matches()){
                     valid = false;
+                    etEmail.setError(getResources().getString(R.string.emailError));
                 }
 
                 if( !etCuit.getText().toString().matches("[0-9]{11}")){
                     valid = false;
+                    etCuit.setError(getResources().getString(R.string.cuitError));
                 }
 
                 String strImporte = etImporte.getText().toString();
                 if(!strImporte.matches("[-]?[0-9]*\\.?[0-9]*")
                         || Objects.equals(strImporte, "") || Objects.equals(strImporte, ".")){
                     valid = false;
+                    etImporte.setError(getResources().getString(R.string.importeError));
                 }
 
                 if (!valid){

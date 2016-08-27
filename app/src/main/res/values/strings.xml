@@ -10,5 +10,8 @@
     <string name="btnPlazo">HACER PLAZO FIJO</string>
     <string name="checkboxVencimiento">Renovar Automáticamente Vencimiento</string>
     <string name="mensajeResultadoError">Datos Incorrectos, por favor revíselos</string>
+    <string name="emailError">Correo electronico inválido</string>
+    <string name="cuitError">CUIT inválido</string>
+    <string name="importeError">Importe inválido</string>
 
 </resources>
